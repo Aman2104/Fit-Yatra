@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Group 1: User Profile -->
+    <group android:id="@+id/group_profile">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_posture"
+            android:title="Profile" />
+    </group>
+
+    <!-- Group 2: Functionalities -->
+    <group android:id="@+id/group_functionalities">
+        <item
+            android:id="@+id/nav_exercises"
+            android:icon="@drawable/ic_posture"
+            android:title="Exercises" />
+
+        <item
+            android:id="@+id/nav_posture_detection"
+            android:icon="@drawable/ic_posture"
+            android:title="Posture Detection" />
+    </group>
+
+    <!-- Logout Item -->
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+
+</menu>
+

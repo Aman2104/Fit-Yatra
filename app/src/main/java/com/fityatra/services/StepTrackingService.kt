@@ -101,7 +101,7 @@ class StepTrackingService : Service(), SensorEventListener {
 
     private fun updateStepCount() {
         val sharedPreferences =
-            getSharedPreferences("step_counts", MODE_PRIVATE) // Change name to "step_counts"
+            getSharedPreferences("step_counts", MODE_PRIVATE)
         with(sharedPreferences.edit()) {
             putInt("total_step_count", stepCount)
             putInt("low_accuracy_count", lowAccuracyStepCount)
@@ -137,8 +137,6 @@ class StepTrackingService : Service(), SensorEventListener {
                         Log.d("Sensor Accuracy", "Step detector sensor accuracy is high.")
                         highAccuracyStepCount++
                     }
-
-
                 }
             }
         }
