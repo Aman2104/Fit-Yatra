@@ -27,7 +27,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var passwordField: EditText
     private lateinit var signupButton: Button
     private lateinit var profileImage: CircleImageView
-    var image:String?=null
+    var image: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -39,7 +39,7 @@ class SignupActivity : AppCompatActivity() {
         signupButton = findViewById(R.id.signup_button)
         profileImage = findViewById(R.id.profile_image)
 
-        profileImage.setOnClickListener{ openGallery()}
+        profileImage.setOnClickListener { openGallery() }
 
         signupButton.setOnClickListener {
             val username = usernameField.text.toString()
@@ -49,21 +49,25 @@ class SignupActivity : AppCompatActivity() {
             if (username.isNotBlank() && email.isNotBlank() && password.isNotBlank() && image != null) {
                 sendOTP(username, email, password)
             } else {
-                Toast.makeText(this, "Please fill in all the fields and select an image", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Please fill in all the fields and select an image",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
 
     }
 
-    private fun sendOTP(username: String, email: String,  password: String) {
+    private fun sendOTP(username: String, email: String, password: String) {
         lifecycleScope.launch {
             try {
                 val sendOtpRequest = SendOtpRequest(email)
                 val response = apiService.sendOtp(sendOtpRequest)
                 Log.d("response in", response.toString())
                 if (response.isSuccessful) {
-                    navigateToOtpScreen(username, email,password)
+                    navigateToOtpScreen(username, email, password)
                 } else {
                     // Handle unsuccessful response
                 }
@@ -79,7 +83,7 @@ class SignupActivity : AppCompatActivity() {
             putExtra("name", username)
             putExtra("email", email)
             putExtra("password", password)
-            putExtra("image",image)
+            putExtra("image", image)
         }
         startActivity(intent)
     }
@@ -112,7 +116,7 @@ class SignupActivity : AppCompatActivity() {
                 val response = apiService.uploadImage(imagePart)
                 Log.d("responsing", response.toString())
                 if (response.isSuccessful) {
-                    image=response.body()?.imagePath
+                    image = response.body()?.imagePath
                 } else {
                 }
             } catch (e: Exception) {
@@ -130,7 +134,6 @@ class SignupActivity : AppCompatActivity() {
         cursor?.close()
         return filePath ?: ""
     }
-
 
 
     companion object {

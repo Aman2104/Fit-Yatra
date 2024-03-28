@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="posture_problems">
+        <item>Healty Posture</item>
+        <item>Forward Head Posture</item>
+        <item>Kyphosis</item>
+        <item>Swayback</item>
+        <item>Flatback</item>
+    </string-array>
+
+</resources>

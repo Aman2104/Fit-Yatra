@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Group 1: User Profile -->
     <group android:id="@+id/group_profile">
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_posture"
-            android:title="Profile" />
+            android:title="Profile"/>
     </group>
 
-    <!-- Group 2: Functionalities -->
+<!--     Group 2: Functionalities-->
     <group android:id="@+id/group_functionalities">
         <item
             android:id="@+id/nav_exercises"
-            android:icon="@drawable/ic_posture"
+            android:icon="@drawable/ic_exercise"
             android:title="Exercises" />
-
         <item
             android:id="@+id/nav_posture_detection"
             android:icon="@drawable/ic_posture"
             android:title="Posture Detection" />
+        <item
+            android:id="@+id/nav_routine"
+            android:icon="@drawable/ic_routine"
+            android:title="Add Routine" />
+        <item
+            android:id="@+id/nav_calorie"
+            android:icon="@drawable/ic_calorie"
+            android:title="Calorie Monitor" />
     </group>
 
     <!-- Logout Item -->

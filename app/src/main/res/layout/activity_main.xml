@@ -148,6 +148,38 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
+            <RelativeLayout
+                android:id="@+id/exerciseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Activity"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_see_more"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/exerciseRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/exercise_item_layout"
+                android:paddingHorizontal="12dp"/>
+
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,12 +223,13 @@
                         android:layout_below="@+id/activityLayout"
                         android:layout_marginVertical="20dp"
                         >
+
                         <TextView
                             android:id="@+id/pushupText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Push-Ups"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -205,16 +238,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Biceps, Tricepsc, shoulders"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
                         <TextView
                             android:id="@+id/totalpushupText"
-                            android:layout_below="@+id/pushupText"
+                            android:layout_alignParentEnd="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15x3"
-                            android:textSize="16dp"
-                            android:layout_alignParentEnd="true"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
                     <RelativeLayout
@@ -229,7 +261,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Squads"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -238,15 +270,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Calves, legs, Thighs"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
                         <TextView
                             android:id="@+id/totalSquadText"
-                            android:layout_below="@+id/SquadExerciseText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="25x4"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:layout_alignParentEnd="true"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -258,43 +289,11 @@
                         android:layout_marginVertical="20dp"
                         >
                         <TextView
-                            android:id="@+id/LungesText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lunges"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/LungesExcerciseText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/LungesText"
-                            android:text="Calves, HamStrings, Glutes"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:id="@+id/totalLungesText"
-                            android:layout_below="@+id/LungesExcerciseText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20x2"
-                            android:textSize="16dp"
-                            android:layout_alignParentEnd="true"
-                            android:textStyle="bold" />
-                    </RelativeLayout><RelativeLayout
-                        android:id="@+id/exer4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/exer3"
-                        android:layout_marginVertical="20dp"
-                        >
-                        <TextView
                             android:id="@+id/PullUpText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pull Up"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -303,15 +302,14 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/PullUpText"
                             android:text="Biceps,Triceps,Shoulders"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
                         <TextView
                             android:id="@+id/totalPullUpText"
-                            android:layout_below="@+id/PullUpExcerciseText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="12x3"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
                             android:layout_alignParentEnd="true"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -390,9 +388,10 @@
 
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu"
+        app:headerLayout="@layout/nav_header"/>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -46,17 +46,18 @@ class OTPVerification : AppCompatActivity() {
             val password = intent.getStringExtra("password")
             val image = intent.getStringExtra("image")
             Log.d("email", email.toString())
-            val otp = "${otpDigit1.text}${otpDigit2.text}${otpDigit3.text}${otpDigit4.text}${otpDigit5.text}${otpDigit6.text}"
+            val otp =
+                "${otpDigit1.text}${otpDigit2.text}${otpDigit3.text}${otpDigit4.text}${otpDigit5.text}${otpDigit6.text}"
             if (email != null) {
                 lifecycleScope.launch {
                     try {
                         val verifyOtpRequest = VerifyOtpRequest(email, otp)
                         val response = apiService.verifyOtp(verifyOtpRequest)
                         if (response.isSuccessful) {
-                           Log.d("response ", response.toString())
-                            if (name!=null && password!=null && image!=null){
+                            Log.d("response ", response.toString())
+                            if (name != null && password != null && image != null) {
                                 Log.d("values: ", name)
-                                createUser(name,password,image,email)
+                                createUser(name, password, image, email)
                             }
 
                         } else {

@@ -13,10 +13,9 @@ object ApiClient {
         .build()
 
 
-
     val apiService: ApiServices = retrofit.create(ApiServices::class.java)
 
-    fun call (){
+    fun call() {
         Log.d("retrofit", retrofit.toString())
     }
 }

@@ -30,6 +30,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PostureDetectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ExercisesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EditPersonalDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PersonalDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CalorieStatisticsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AddProfilePicActivity"
             android:exported="false" />
         <activity
